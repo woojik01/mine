@@ -3,7 +3,7 @@
 ```python
 print("안녕하세요")
 ```
-> 안녕하세요
+> 안녕하세요  
 
 ---
 ## 주석
@@ -16,7 +16,7 @@ print("안녕하세요")
 a = 10
 print(a) # a에 저장된, 즉, 10 출력.
 ```
-> 10
+> 10  
 
 ---
 ## 자료형(형변환)
@@ -29,7 +29,7 @@ print(bool(True)) # 불리언(참(True) 또는 거짓(False))
 > 1  
 > 0.5  
 > 문자  
-> True
+> True  
 
 ---
 ## 연산자
@@ -51,7 +51,7 @@ print(a % b) # 나눗셈의 나머지 구하기
 > 16  
 > 2  
 > 2  
-> 0
+> 0  
 
 ---
 ### 비교 연산자
@@ -121,7 +121,7 @@ else:
 ```
 > a = 4  
 > b = 2  
-> a가 b보다 크다.
+> a가 b보다 크다.  
 
 ---
 ## 반복문
@@ -135,7 +135,7 @@ for i in range(time):
 > 횟수: 3  
 > 3  
 > 2  
-> 1
+> 1  
 
 ---
 ### while
@@ -154,7 +154,7 @@ while q != "quit":
 ```
 > 끝?: no  
 > 아니구나...  
-> 끝?: quit
+> 끝?: quit  
 
 ---
 ## 문자열
@@ -165,7 +165,7 @@ print(text[0]) # 첫 번째 문자는 0임.
 print(text[1]) # 두 번째 문자는 1임.
 ```
 > h  
-> e
+> e  
 
 ---
 ### 슬라이싱
@@ -176,7 +176,7 @@ print(text[2:5])
 ⭐️중요: 단, 시작은 포함, 끝은 비포함
 ```
 > he  
-> llo
+> llo  
 
 ---
 ### 문자열 메서드
@@ -185,7 +185,7 @@ print(text[2:5])
 text = "사과, 바나나, 포도"
 print(text.split(", "))
 ```
-> ['사과', '바나나', '포도']
+> ['사과', '바나나', '포도']  
 
 ---
 ### replace()
@@ -193,7 +193,7 @@ print(text.split(", "))
 text = "I like Java"
 print(text.replace("Java", "Python"))
 ```
-> I like Python
+> I like Python  
 
 ---
 ### strip()
@@ -201,7 +201,7 @@ print(text.replace("Java", "Python"))
 name = input("이름: ").strip()
 print(f"안녕하세요, {name} 님.")
 ```
-> 안녕하세요, 김우직 님.
+> 안녕하세요, 김우직 님.  
 
 ---
 ### find()
@@ -210,8 +210,8 @@ text = "hello"
 print(text.find("e"))
 print(text.find("x")) # 문자가 없으면 -1이 출력됨.
 ```
-> 1
-> -1
+> 1  
+> -1  
 
 ---
 ### count()
@@ -219,7 +219,7 @@ print(text.find("x")) # 문자가 없으면 -1이 출력됨.
 text = "hello"
 print(text.count("l"))
 ```
-> 2
+> 2  
 
 ---
 ### join()
@@ -229,8 +229,8 @@ print(",".join(words))
 print(" ".join(words))
 # ⭐️중요: join()은 특별히 '변수이름.메서드이름()' 형식이 아니다.
 ```
-> 사과,바나나,포도
-> 사과 바나나 포도
+> 사과,바나나,포도  
+> 사과 바나나 포도  
 
 ---
 ### upper(), lower()
@@ -239,8 +239,8 @@ text = "Hello"
 print(text.upper())
 print(text.lower())
 ```
-> HELLO
-> hello
+> HELLO  
+> hello  
 
 ---
 ### 기타
