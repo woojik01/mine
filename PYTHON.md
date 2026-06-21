@@ -78,9 +78,9 @@ True
 
 ---
 
-# 연산자
+## 연산자
 
-## 산술 연산자
+### 산술 연산자
 
 ```python
 a = 4
@@ -109,7 +109,7 @@ print(a % b)   # 나머지
 
 ---
 
-## 비교 연산자
+### 비교 연산자
 
 ```python
 a == 0   # 같다
@@ -122,7 +122,7 @@ a <= 0   # 작거나 같다
 
 ---
 
-## 논리 연산자
+### 논리 연산자
 
 ```python
 a = 3
@@ -141,21 +141,21 @@ True
 False
 ```
 
-### and
+#### and
 
 두 조건이 모두 참일 때 `True`
 
-### or
+#### or
 
 둘 중 하나만 참이어도 `True`
 
-### not
+#### not
 
 결과를 반대로 바꾼다.
 
 ---
 
-## 대입 연산자
+### 대입 연산자
 
 ```python
 a = 6
@@ -183,7 +183,7 @@ a %= 2  # a = a % 2
 
 ---
 
-## 멤버십 연산자
+### 멤버십 연산자
 
 ```python
 'a' in 'apple'
@@ -199,7 +199,7 @@ True
 
 ---
 
-## 식별 연산자
+### 식별 연산자
 
 `is`는 값이 아니라 객체가 같은지를 비교한다.
 
@@ -223,7 +223,7 @@ True
 
 ---
 
-## 비트 연산자
+### 비트 연산자
 
 ```python
 a = 5
@@ -246,7 +246,7 @@ print(~a)
 
 ---
 
-# 입력
+## 입력
 
 `input()`은 기본적으로 문자열(str)을 반환한다.
 
@@ -258,7 +258,7 @@ height = float(input("키: "))
 
 ---
 
-# 조건문
+## 조건문
 
 ```python
 a = int(input("a = "))
@@ -282,9 +282,9 @@ a가 b보다 크다.
 
 ---
 
-# 반복문
+## 반복문
 
-## for
+### for
 
 `range(n)`은 0부터 n-1까지 반복한다.
 
@@ -318,7 +318,7 @@ for i in range(3, 0, -1):
 
 ---
 
-## while
+### while
 
 조건이 참인 동안 반복한다.
 
@@ -348,23 +348,23 @@ while q != "quit":
 끝?: quit
 ```
 
-### break
+#### break
 
 반복문을 즉시 종료한다.
 
-### continue
+#### continue
 
 현재 반복을 건너뛰고 다음 반복으로 넘어간다.
 
-### pass
+#### pass
 
 아무 동작도 수행하지 않는다.
 
 ---
 
-# 문자열
+## 문자열
 
-## 인덱싱
+### 인덱싱
 
 문자열의 첫 번째 위치는 0이다.
 
@@ -384,7 +384,7 @@ e
 
 ---
 
-## 슬라이싱
+### 슬라이싱
 
 ```python
 text = "hello"
@@ -404,9 +404,9 @@ llo
 
 ---
 
-# 문자열 메서드
+## 문자열 메서드
 
-## split()
+### split()
 
 ```python
 text = "사과, 바나나, 포도"
@@ -422,7 +422,7 @@ print(text.split(", "))
 
 ---
 
-## replace()
+### replace()
 
 ```python
 text = "I like Java"
@@ -438,7 +438,7 @@ I like Python
 
 ---
 
-## strip()
+### strip()
 
 ```python
 name = input("이름: ").strip()
@@ -448,7 +448,7 @@ print(f"안녕하세요, {name} 님.")
 
 ---
 
-## find()
+### find()
 
 ```python
 text = "hello"
@@ -468,7 +468,7 @@ print(text.find("x"))
 
 ---
 
-## count()
+### count()
 
 ```python
 text = "hello"
@@ -484,7 +484,7 @@ print(text.count("l"))
 
 ---
 
-## join()
+### join()
 
 ```python
 words = ["사과", "바나나", "포도"]
@@ -504,7 +504,7 @@ print(" ".join(words))
 
 ---
 
-## upper(), lower()
+### upper(), lower()
 
 ```python
 text = "Hello"
@@ -522,7 +522,7 @@ hello
 
 ---
 
-## 기타 문자열 메서드
+### 기타 문자열 메서드
 
 ```python
 text = "hello"
