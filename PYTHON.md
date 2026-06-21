@@ -24,10 +24,10 @@ print(float(0.5)) # 실수
 print(str("문자")) # 문자
 print(bool(True)) # 불리언(참(True) 또는 거짓(False))
 ```
-> 1 
-> 0.5 
-> 문자 
-> True 
+> 1  
+> 0.5  
+> 문자  
+> True  
 ---
 ## 연산자
 ### 산술 연산자
