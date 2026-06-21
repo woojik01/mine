@@ -1996,3 +1996,601 @@ print(result)
 ```text
 [2, 4]
 ```
+
+## 표준 라이브러리
+
+### math
+
+`math` 모듈은 수학 관련 함수를 제공한다.
+
+```python
+import math
+
+print(math.sqrt(16))
+print(math.pi)
+print(math.factorial(5))
+```
+
+출력 결과:
+
+```text
+4.0
+3.141592653589793
+120
+```
+
+---
+
+#### ceil()
+
+올림한 값을 반환한다.
+
+```python
+import math
+
+print(math.ceil(3.14))
+```
+
+출력 결과:
+
+```text
+4
+```
+
+---
+
+#### floor()
+
+내림한 값을 반환한다.
+
+```python
+import math
+
+print(math.floor(3.99))
+```
+
+출력 결과:
+
+```text
+3
+```
+
+---
+
+### random
+
+난수를 생성할 때 사용한다.
+
+```python
+import random
+
+print(random.randint(1, 10))
+```
+
+출력 결과:
+
+```text
+7
+```
+
+※ 실행할 때마다 결과가 달라질 수 있다.
+
+---
+
+#### choice()
+
+무작위로 하나를 선택한다.
+
+```python
+import random
+
+fruits = ["사과", "바나나", "포도"]
+
+print(random.choice(fruits))
+```
+
+출력 결과:
+
+```text
+포도
+```
+
+---
+
+#### shuffle()
+
+리스트의 순서를 섞는다.
+
+```python
+import random
+
+numbers = [1, 2, 3, 4, 5]
+
+random.shuffle(numbers)
+
+print(numbers)
+```
+
+출력 결과:
+
+```text
+[3, 1, 5, 2, 4]
+```
+
+---
+
+### datetime
+
+날짜와 시간을 다룰 때 사용한다.
+
+```python
+from datetime import datetime
+
+now = datetime.now()
+
+print(now)
+```
+
+출력 결과:
+
+```text
+2026-06-21 12:34:56.123456
+```
+
+※ 실행 시점에 따라 결과가 달라진다.
+
+---
+
+#### strftime()
+
+날짜를 원하는 형식으로 출력한다.
+
+```python
+from datetime import datetime
+
+now = datetime.now()
+
+print(now.strftime("%Y-%m-%d"))
+```
+
+출력 결과:
+
+```text
+2026-06-21
+```
+
+---
+
+### os
+
+운영체제와 관련된 기능을 제공한다.
+
+```python
+import os
+
+print(os.getcwd())
+```
+
+출력 결과:
+
+```text
+현재 작업 폴더 경로
+```
+
+---
+
+#### listdir()
+
+폴더 내부의 파일 목록을 가져온다.
+
+```python
+import os
+
+print(os.listdir())
+```
+
+출력 결과:
+
+```text
+['main.py', 'test.txt']
+```
+
+---
+
+### time
+
+시간 관련 기능을 제공한다.
+
+```python
+import time
+
+print("시작")
+
+time.sleep(2)
+
+print("종료")
+```
+
+출력 결과:
+
+```text
+시작
+(2초 대기)
+종료
+```
+
+---
+
+### sys
+
+파이썬 인터프리터와 관련된 기능을 제공한다.
+
+```python
+import sys
+
+print(sys.version)
+```
+
+출력 결과:
+
+```text
+3.x.x ...
+```
+
+---
+
+### copy
+
+객체를 복사할 때 사용한다.
+
+```python
+import copy
+
+a = [1, 2, 3]
+b = copy.deepcopy(a)
+
+print(a == b)
+print(a is b)
+```
+
+출력 결과:
+
+```text
+True
+False
+```
+
+---
+
+### json
+
+JSON 데이터를 다룰 때 사용한다.
+
+```python
+import json
+
+data = {
+    "name": "Python",
+    "version": 3
+}
+
+text = json.dumps(data)
+
+print(text)
+```
+
+출력 결과:
+
+```text
+{"name": "Python", "version": 3}
+```
+
+---
+
+## 심화 문법
+
+### 이터레이터(iterator)
+
+이터레이터는 값을 하나씩 꺼낼 수 있는 객체이다.
+
+```python
+numbers = iter([1, 2, 3])
+
+print(next(numbers))
+print(next(numbers))
+```
+
+출력 결과:
+
+```text
+1
+2
+```
+
+---
+
+### 제너레이터(generator)
+
+제너레이터는 값을 필요할 때마다 생성한다.
+
+```python
+def count():
+    yield 1
+    yield 2
+    yield 3
+
+for i in count():
+    print(i)
+```
+
+출력 결과:
+
+```text
+1
+2
+3
+```
+
+---
+
+### yield
+
+함수의 실행 상태를 유지하면서 값을 반환한다.
+
+```python
+def generator():
+    yield "A"
+    yield "B"
+
+g = generator()
+
+print(next(g))
+print(next(g))
+```
+
+출력 결과:
+
+```text
+A
+B
+```
+
+---
+
+### 데코레이터
+
+함수에 새로운 기능을 추가할 수 있다.
+
+```python
+def decorator(func):
+    def wrapper():
+        print("시작")
+        func()
+        print("끝")
+
+    return wrapper
+
+
+@decorator
+def hello():
+    print("안녕하세요")
+
+
+hello()
+```
+
+출력 결과:
+
+```text
+시작
+안녕하세요
+끝
+```
+
+---
+
+### @property
+
+메서드를 변수처럼 사용할 수 있게 한다.
+
+```python
+class Circle:
+    def __init__(self, radius):
+        self.radius = radius
+
+    @property
+    def diameter(self):
+        return self.radius * 2
+
+
+circle = Circle(5)
+
+print(circle.diameter)
+```
+
+출력 결과:
+
+```text
+10
+```
+
+---
+
+### with
+
+자원을 자동으로 정리한다.
+
+```python
+with open("example.txt", "w") as file:
+    file.write("Hello")
+```
+
+---
+
+### match-case
+
+Python 3.10부터 사용할 수 있는 조건문이다.
+
+```python
+command = "start"
+
+match command:
+    case "start":
+        print("시작")
+    case "stop":
+        print("종료")
+    case _:
+        print("알 수 없음")
+```
+
+출력 결과:
+
+```text
+시작
+```
+
+---
+
+### 리스트 컴프리헨션
+
+```python
+numbers = [x * 2 for x in range(5)]
+
+print(numbers)
+```
+
+출력 결과:
+
+```text
+[0, 2, 4, 6, 8]
+```
+
+---
+
+### 딕셔너리 컴프리헨션
+
+```python
+squares = {x: x**2 for x in range(5)}
+
+print(squares)
+```
+
+출력 결과:
+
+```text
+{0: 0, 1: 1, 2: 4, 3: 9, 4: 16}
+```
+
+---
+
+### 집합 컴프리헨션
+
+```python
+numbers = {x % 3 for x in range(10)}
+
+print(numbers)
+```
+
+출력 결과:
+
+```text
+{0, 1, 2}
+```
+
+---
+
+### enumerate()
+
+인덱스와 값을 동시에 얻을 수 있다.
+
+```python
+fruits = ["사과", "바나나", "포도"]
+
+for index, value in enumerate(fruits):
+    print(index, value)
+```
+
+출력 결과:
+
+```text
+0 사과
+1 바나나
+2 포도
+```
+
+---
+
+### zip()
+
+여러 iterable 객체를 묶는다.
+
+```python
+a = [1, 2, 3]
+b = ["A", "B", "C"]
+
+print(list(zip(a, b)))
+```
+
+출력 결과:
+
+```text
+[(1, 'A'), (2, 'B'), (3, 'C')]
+```
+
+---
+
+### lambda
+
+익명 함수를 만들 수 있다.
+
+```python
+add = lambda a, b: a + b
+
+print(add(3, 5))
+```
+
+출력 결과:
+
+```text
+8
+```
+
+---
+
+### map()
+
+모든 요소에 함수를 적용한다.
+
+```python
+numbers = [1, 2, 3]
+
+result = list(map(lambda x: x * 2, numbers))
+
+print(result)
+```
+
+출력 결과:
+
+```text
+[2, 4, 6]
+```
+
+---
+
+### filter()
+
+조건에 맞는 요소만 선택한다.
+
+```python
+numbers = [1, 2, 3, 4, 5]
+
+result = list(filter(lambda x: x % 2 == 0, numbers))
+
+print(result)
+```
+
+출력 결과:
+
+```text
+[2, 4]
+```
