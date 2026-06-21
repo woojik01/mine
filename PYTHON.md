@@ -173,9 +173,7 @@ print(text[1]) # 두 번째 문자는 1임.
 text = "hello"
 print(text[0:2])
 print(text[2:5])
-'''
 ⭐️중요: 단, 시작은 포함, 끝은 비포함
-'''
 ```
 > he  
 > llo
@@ -201,5 +199,53 @@ print(text.replace("Java", "Python"))
 ### strip()
 ```python
 name = input("이름: ").strip()
-print()
+print(f"안녕하세요, {name} 님.")
 ```
+> 안녕하세요, 김우직 님.
+
+---
+### find()
+```python
+text = "hello"
+print(text.find("e"))
+print(text.find("x")) # 문자가 없으면 -1이 출력됨.
+```
+> 1
+> -1
+
+---
+### count()
+```python
+text = "hello"
+print(text.count("l"))
+```
+> 2
+
+---
+### join()
+```python
+words = ["사과", "바나나", "포도"]
+print(",".join(words))
+print(" ".join(words))
+# ⭐️중요: join()은 특별히 '변수이름.메서드이름()' 형식이 아니다.
+```
+> 사과,바나나,포도
+> 사과 바나나 포도
+
+---
+### upper(), lower()
+```python
+text = "Hello"
+print(text.upper())
+print(text.lower())
+```
+> HELLO
+> hello
+
+---
+### 기타
+```plain text
+추후 추가 예정
+```
+---
+## ...
