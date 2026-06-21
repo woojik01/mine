@@ -2594,3 +2594,1090 @@ print(result)
 ```text
 [2, 4]
 ```
+
+⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️## 고급 표준 라이브러리
+
+### threading
+
+`threading` 모듈은 여러 작업을 동시에 수행할 때 사용한다.
+
+```python
+import threading
+
+
+def hello():
+    print("스레드 실행")
+
+
+thread = threading.Thread(target=hello)
+
+thread.start()
+thread.join()
+```
+
+출력 결과:
+
+```text
+스레드 실행
+```
+
+---
+
+### asyncio
+
+비동기 프로그래밍을 지원한다.
+
+```python
+import asyncio
+
+
+async def hello():
+    print("안녕하세요")
+
+
+asyncio.run(hello())
+```
+
+출력 결과:
+
+```text
+안녕하세요
+```
+
+---
+
+### typing
+
+타입 힌트(type hint)를 제공한다.
+
+```python
+from typing import List
+
+
+numbers: List[int] = [1, 2, 3]
+
+print(numbers)
+```
+
+출력 결과:
+
+```text
+[1, 2, 3]
+```
+
+---
+
+### dataclass
+
+클래스를 간단하게 작성할 수 있다.
+
+```python
+from dataclasses import dataclass
+
+
+@dataclass
+class Student:
+    name: str
+    age: int
+
+
+student = Student("Python", 3)
+
+print(student)
+```
+
+출력 결과:
+
+```text
+Student(name='Python', age=3)
+```
+
+---
+
+### collections
+
+유용한 자료구조를 제공한다.
+
+#### Counter()
+
+각 요소의 개수를 센다.
+
+```python
+from collections import Counter
+
+
+text = "hello"
+
+print(Counter(text))
+```
+
+출력 결과:
+
+```text
+Counter({'l': 2, 'h': 1, 'e': 1, 'o': 1})
+```
+
+---
+
+#### deque()
+
+양쪽에서 빠르게 삽입·삭제할 수 있다.
+
+```python
+from collections import deque
+
+
+queue = deque([1, 2, 3])
+
+queue.append(4)
+queue.appendleft(0)
+
+print(queue)
+```
+
+출력 결과:
+
+```text
+deque([0, 1, 2, 3, 4])
+```
+
+---
+
+### heapq
+
+우선순위 큐를 구현할 때 사용한다.
+
+```python
+import heapq
+
+
+numbers = [3, 1, 5, 2]
+
+heapq.heapify(numbers)
+
+print(heapq.heappop(numbers))
+```
+
+출력 결과:
+
+```text
+1
+```
+
+---
+
+### bisect
+
+이진 탐색을 지원한다.
+
+```python
+import bisect
+
+
+numbers = [1, 3, 5, 7]
+
+index = bisect.bisect_left(numbers, 4)
+
+print(index)
+```
+
+출력 결과:
+
+```text
+2
+```
+
+---
+
+### pathlib
+
+파일 경로를 객체 형태로 다룰 수 있다.
+
+```python
+from pathlib import Path
+
+
+path = Path("example.txt")
+
+print(path.exists())
+```
+
+출력 결과:
+
+```text
+False
+```
+
+---
+
+### re
+
+정규표현식을 지원한다.
+
+```python
+import re
+
+
+text = "Python 3"
+
+result = re.findall(r"\d", text)
+
+print(result)
+```
+
+출력 결과:
+
+```text
+['3']
+```
+
+---
+
+#### match()
+
+문자열의 시작 부분이 패턴과 일치하는지 검사한다.
+
+```python
+import re
+
+
+text = "Python"
+
+result = re.match(r"P", text)
+
+print(result)
+```
+
+출력 결과:
+
+```text
+<re.Match object ...>
+```
+
+---
+
+#### sub()
+
+문자열을 치환한다.
+
+```python
+import re
+
+
+text = "I like Java"
+
+result = re.sub("Java", "Python", text)
+
+print(result)
+```
+
+출력 결과:
+
+```text
+I like Python
+```
+
+---
+
+## 외부 라이브러리
+
+### NumPy
+
+수치 계산을 위한 라이브러리이다.
+
+```python
+import numpy as np
+
+
+numbers = np.array([1, 2, 3])
+
+print(numbers)
+```
+
+출력 결과:
+
+```text
+[1 2 3]
+```
+
+---
+
+#### 배열 연산
+
+```python
+import numpy as np
+
+
+a = np.array([1, 2, 3])
+b = np.array([4, 5, 6])
+
+print(a + b)
+```
+
+출력 결과:
+
+```text
+[5 7 9]
+```
+
+---
+
+### pandas
+
+데이터 분석에 사용되는 라이브러리이다.
+
+```python
+import pandas as pd
+
+
+data = {
+    "A": [1, 2],
+    "B": [3, 4]
+}
+
+df = pd.DataFrame(data)
+
+print(df)
+```
+
+출력 결과:
+
+```text
+   A  B
+0  1  3
+1  2  4
+```
+
+---
+
+#### CSV 파일 읽기
+
+```python
+import pandas as pd
+
+
+df = pd.read_csv("data.csv")
+
+print(df.head())
+```
+
+출력 결과:
+
+```text
+처음 5개의 행
+```
+
+---
+
+### matplotlib
+
+그래프를 그릴 수 있다.
+
+```python
+import matplotlib.pyplot as plt
+
+
+x = [1, 2, 3]
+y = [1, 4, 9]
+
+plt.plot(x, y)
+
+plt.show()
+```
+
+출력 결과:
+
+```text
+그래프 창이 표시됨
+```
+
+---
+
+### tkinter
+
+GUI 프로그램을 만들 수 있다.
+
+```python
+import tkinter as tk
+
+
+window = tk.Tk()
+
+window.mainloop()
+```
+
+출력 결과:
+
+```text
+GUI 창이 표시됨
+```
+
+---
+
+## 패키지 설치
+
+### pip install
+
+패키지를 설치할 수 있다.
+
+```bash
+pip install numpy
+```
+
+---
+
+### 설치된 패키지 확인
+
+```bash
+pip list
+```
+
+---
+
+### 패키지 제거
+
+```bash
+pip uninstall numpy
+```
+
+---
+
+### requirements.txt
+
+패키지 목록을 저장할 수 있다.
+
+```bash
+pip freeze > requirements.txt
+```
+
+---
+
+### requirements.txt 설치
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+## 가상환경
+
+### 생성
+
+```bash
+python -m venv .venv
+```
+
+---
+
+### 활성화
+
+#### Windows
+
+```bash
+.venv\Scripts\activate
+```
+
+#### Linux / macOS
+
+```bash
+source .venv/bin/activate
+```
+
+---
+
+### 비활성화
+
+```bash
+deactivate
+```
+
+---
+
+## 특수 변수
+
+### **name**
+
+현재 파일이 직접 실행되었는지 확인할 수 있다.
+
+```python
+print(__name__)
+```
+
+출력 결과:
+
+```text
+__main__
+```
+
+---
+
+### **name** == "**main**"
+
+현재 파일이 직접 실행될 때만 특정 코드를 실행한다.
+
+```python
+def main():
+    print("실행")
+
+
+if __name__ == "__main__":
+    main()
+```
+
+출력 결과:
+
+```text
+실행
+```
+
+## 알고리즘 및 코딩 테스트용 문법
+
+### 빠른 입력
+
+입력 데이터가 많을 때는 `sys.stdin.readline()`을 사용하는 것이 더 빠르다.
+
+```python
+import sys
+
+input = sys.stdin.readline
+
+n = int(input())
+
+print(n)
+```
+
+---
+
+### 재귀 함수
+
+함수가 자기 자신을 호출할 수 있다.
+
+```python
+def factorial(n):
+    if n == 0:
+        return 1
+
+    return n * factorial(n - 1)
+
+
+print(factorial(5))
+```
+
+출력 결과:
+
+```text
+120
+```
+
+---
+
+### 최대 재귀 깊이 설정
+
+재귀 호출이 많을 경우 제한을 늘릴 수 있다.
+
+```python
+import sys
+
+sys.setrecursionlimit(10**6)
+```
+
+---
+
+## 정렬
+
+### sort()
+
+리스트 자체를 정렬한다.
+
+```python
+numbers = [3, 1, 4, 2]
+
+numbers.sort()
+
+print(numbers)
+```
+
+출력 결과:
+
+```text
+[1, 2, 3, 4]
+```
+
+---
+
+### sorted()
+
+정렬된 새로운 리스트를 반환한다.
+
+```python
+numbers = [3, 1, 4, 2]
+
+result = sorted(numbers)
+
+print(result)
+```
+
+출력 결과:
+
+```text
+[1, 2, 3, 4]
+```
+
+---
+
+### 내림차순 정렬
+
+```python
+numbers = [3, 1, 4, 2]
+
+numbers.sort(reverse=True)
+
+print(numbers)
+```
+
+출력 결과:
+
+```text
+[4, 3, 2, 1]
+```
+
+---
+
+### key 사용
+
+특정 기준으로 정렬할 수 있다.
+
+```python
+words = ["apple", "kiwi", "banana"]
+
+words.sort(key=len)
+
+print(words)
+```
+
+출력 결과:
+
+```text
+['kiwi', 'apple', 'banana']
+```
+
+---
+
+## itertools
+
+### permutations()
+
+순열을 구한다.
+
+```python
+from itertools import permutations
+
+numbers = [1, 2, 3]
+
+result = list(permutations(numbers, 2))
+
+print(result)
+```
+
+출력 결과:
+
+```text
+[(1, 2), (1, 3), (2, 1), (2, 3), (3, 1), (3, 2)]
+```
+
+---
+
+### combinations()
+
+조합을 구한다.
+
+```python
+from itertools import combinations
+
+numbers = [1, 2, 3]
+
+result = list(combinations(numbers, 2))
+
+print(result)
+```
+
+출력 결과:
+
+```text
+[(1, 2), (1, 3), (2, 3)]
+```
+
+---
+
+### product()
+
+중복 순열을 구한다.
+
+```python
+from itertools import product
+
+numbers = [1, 2]
+
+result = list(product(numbers, repeat=2))
+
+print(result)
+```
+
+출력 결과:
+
+```text
+[(1, 1), (1, 2), (2, 1), (2, 2)]
+```
+
+---
+
+### combinations_with_replacement()
+
+중복 조합을 구한다.
+
+```python
+from itertools import combinations_with_replacement
+
+numbers = [1, 2, 3]
+
+result = list(combinations_with_replacement(numbers, 2))
+
+print(result)
+```
+
+출력 결과:
+
+```text
+[(1, 1), (1, 2), (1, 3), (2, 2), (2, 3), (3, 3)]
+```
+
+---
+
+## 스택(Stack)
+
+후입선출(LIFO) 구조이다.
+
+```python
+stack = []
+
+stack.append(1)
+stack.append(2)
+
+print(stack.pop())
+```
+
+출력 결과:
+
+```text
+2
+```
+
+---
+
+## 큐(Queue)
+
+선입선출(FIFO) 구조이다.
+
+```python
+from collections import deque
+
+queue = deque()
+
+queue.append(1)
+queue.append(2)
+
+print(queue.popleft())
+```
+
+출력 결과:
+
+```text
+1
+```
+
+---
+
+## 우선순위 큐
+
+`heapq`를 사용한다.
+
+```python
+import heapq
+
+heap = []
+
+heapq.heappush(heap, 3)
+heapq.heappush(heap, 1)
+heapq.heappush(heap, 2)
+
+print(heapq.heappop(heap))
+```
+
+출력 결과:
+
+```text
+1
+```
+
+---
+
+## 이진 탐색
+
+### bisect_left()
+
+삽입 가능한 가장 왼쪽 위치를 반환한다.
+
+```python
+from bisect import bisect_left
+
+numbers = [1, 2, 4, 4, 5]
+
+print(bisect_left(numbers, 4))
+```
+
+출력 결과:
+
+```text
+2
+```
+
+---
+
+### bisect_right()
+
+삽입 가능한 가장 오른쪽 위치를 반환한다.
+
+```python
+from bisect import bisect_right
+
+numbers = [1, 2, 4, 4, 5]
+
+print(bisect_right(numbers, 4))
+```
+
+출력 결과:
+
+```text
+4
+```
+
+---
+
+## DFS(깊이 우선 탐색)
+
+재귀를 이용한 구현이다.
+
+```python
+graph = [
+    [],
+    [2, 3],
+    [1, 4],
+    [1],
+    [2]
+]
+
+visited = [False] * 5
+
+
+def dfs(v):
+    visited[v] = True
+
+    print(v, end=" ")
+
+    for i in graph[v]:
+        if not visited[i]:
+            dfs(i)
+
+
+dfs(1)
+```
+
+출력 결과:
+
+```text
+1 2 4 3
+```
+
+---
+
+## BFS(너비 우선 탐색)
+
+큐를 이용하여 구현한다.
+
+```python
+from collections import deque
+
+graph = [
+    [],
+    [2, 3],
+    [1, 4],
+    [1],
+    [2]
+]
+
+visited = [False] * 5
+
+
+def bfs(start):
+    queue = deque([start])
+    visited[start] = True
+
+    while queue:
+        v = queue.popleft()
+
+        print(v, end=" ")
+
+        for i in graph[v]:
+            if not visited[i]:
+                queue.append(i)
+                visited[i] = True
+
+
+bfs(1)
+```
+
+출력 결과:
+
+```text
+1 2 3 4
+```
+
+---
+
+## enumerate()
+
+인덱스와 값을 동시에 가져올 수 있다.
+
+```python
+fruits = ["사과", "바나나", "포도"]
+
+for idx, value in enumerate(fruits):
+    print(idx, value)
+```
+
+출력 결과:
+
+```text
+0 사과
+1 바나나
+2 포도
+```
+
+---
+
+## zip()
+
+여러 리스트를 묶을 수 있다.
+
+```python
+a = [1, 2, 3]
+b = ["A", "B", "C"]
+
+for x, y in zip(a, b):
+    print(x, y)
+```
+
+출력 결과:
+
+```text
+1 A
+2 B
+3 C
+```
+
+---
+
+## Counter
+
+원소의 개수를 셀 수 있다.
+
+```python
+from collections import Counter
+
+numbers = [1, 1, 2, 2, 2, 3]
+
+counter = Counter(numbers)
+
+print(counter)
+```
+
+출력 결과:
+
+```text
+Counter({2: 3, 1: 2, 3: 1})
+```
+
+---
+
+## defaultdict
+
+기본값을 자동으로 생성한다.
+
+```python
+from collections import defaultdict
+
+d = defaultdict(int)
+
+d["a"] += 1
+
+print(d)
+```
+
+출력 결과:
+
+```text
+defaultdict(<class 'int'>, {'a': 1})
+```
+
+---
+
+## 시간 복잡도
+
+| 복잡도        | 의미       |
+| ---------- | -------- |
+| O(1)       | 상수 시간    |
+| O(log N)   | 로그 시간    |
+| O(N)       | 선형 시간    |
+| O(N log N) | 로그 선형 시간 |
+| O(N²)      | 이차 시간    |
+| O(2ᴺ)      | 지수 시간    |
+| O(N!)      | 팩토리얼 시간  |
+
+---
+
+## 자주 사용하는 INF
+
+무한대를 표현할 때 사용한다.
+
+```python
+INF = int(1e9)
+```
+
+또는
+
+```python
+INF = float("inf")
+```
+
+---
+
+## 2차원 리스트 초기화
+
+```python
+graph = [[0] * 3 for _ in range(4)]
+
+print(graph)
+```
+
+출력 결과:
+
+```text
+[[0, 0, 0], [0, 0, 0], [0, 0, 0], [0, 0, 0]]
+```
+
+⚠️ 아래 방식은 모든 행이 연결되므로 권장하지 않는다.
+
+```python
+graph = [[0] * 3] * 4
+```
