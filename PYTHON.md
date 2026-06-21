@@ -1068,3 +1068,931 @@ print(a - b)
 ```text
 {1, 2}
 ```
+
+## 함수
+
+함수(function)는 특정 작업을 수행하는 코드를 묶어 재사용할 수 있게 해준다.
+
+```python
+def hello():
+    print("안녕하세요")
+    
+hello()
+```
+
+출력 결과:
+
+```text
+안녕하세요
+```
+
+---
+
+### 매개변수(Parameter)
+
+함수에 값을 전달할 수 있다.
+
+```python
+def hello(name):
+    print(f"안녕하세요, {name} 님.")
+
+hello("Python")
+```
+
+출력 결과:
+
+```text
+안녕하세요, Python 님.
+```
+
+---
+
+### 반환값(return)
+
+함수의 실행 결과를 반환할 수 있다.
+
+```python
+def add(a, b):
+    return a + b
+
+result = add(3, 5)
+
+print(result)
+```
+
+출력 결과:
+
+```text
+8
+```
+
+---
+
+### 기본값 매개변수
+
+기본값을 지정할 수 있다.
+
+```python
+def hello(name="손님"):
+    print(f"안녕하세요, {name} 님.")
+
+hello()
+hello("Python")
+```
+
+출력 결과:
+
+```text
+안녕하세요, 손님 님.
+안녕하세요, Python 님.
+```
+
+---
+
+### 여러 개의 반환값
+
+튜플 형태로 여러 값을 반환할 수 있다.
+
+```python
+def calc(a, b):
+    return a + b, a - b
+
+x, y = calc(5, 3)
+
+print(x)
+print(y)
+```
+
+출력 결과:
+
+```text
+8
+2
+```
+
+---
+
+### 가변 위치 인자(*args)
+
+전달받는 인자의 개수가 정해져 있지 않을 때 사용한다.
+
+```python
+def total(*args):
+    print(args)
+    
+total(1, 2, 3)
+```
+
+출력 결과:
+
+```text
+(1, 2, 3)
+```
+
+---
+
+### 가변 키워드 인자(**kwargs)
+
+키워드 형태의 인자를 여러 개 받을 수 있다.
+
+```python
+def profile(**kwargs):
+    print(kwargs)
+
+profile(name="Python", version=3)
+```
+
+출력 결과:
+
+```text
+{'name': 'Python', 'version': 3}
+```
+
+---
+
+## 람다 함수
+
+람다 함수(lambda)는 간단한 함수를 한 줄로 표현할 때 사용한다.
+
+```python
+add = lambda a, b: a + b
+
+print(add(3, 5))
+```
+
+출력 결과:
+
+```text
+8
+```
+
+---
+
+## 예외 처리
+
+예외(exception)는 프로그램 실행 중 발생하는 오류를 의미한다.
+
+```python
+try:
+    print(10 / 0)
+except ZeroDivisionError:
+    print("0으로 나눌 수 없습니다.")
+```
+
+출력 결과:
+
+```text
+0으로 나눌 수 없습니다.
+```
+
+---
+
+### try
+
+예외가 발생할 수 있는 코드를 작성한다.
+
+```python
+try:
+    print(int("abc"))
+except:
+    print("오류 발생")
+```
+
+출력 결과:
+
+```text
+오류 발생
+```
+
+---
+
+### except
+
+발생한 예외를 처리한다.
+
+```python
+try:
+    num = 10 / 0
+except ZeroDivisionError:
+    print("0으로 나눌 수 없습니다.")
+```
+
+출력 결과:
+
+```text
+0으로 나눌 수 없습니다.
+```
+
+---
+
+### else
+
+예외가 발생하지 않았을 때 실행된다.
+
+```python
+try:
+    print(10 / 2)
+except ZeroDivisionError:
+    print("오류 발생")
+else:
+    print("정상적으로 실행되었습니다.")
+```
+
+출력 결과:
+
+```text
+5.0
+정상적으로 실행되었습니다.
+```
+
+---
+
+### finally
+
+예외 발생 여부와 관계없이 항상 실행된다.
+
+```python
+try:
+    print(10 / 0)
+except ZeroDivisionError:
+    print("오류 발생")
+finally:
+    print("프로그램 종료")
+```
+
+출력 결과:
+
+```text
+오류 발생
+프로그램 종료
+```
+
+---
+
+### raise
+
+직접 예외를 발생시킬 수 있다.
+
+```python
+age = -1
+
+if age < 0:
+    raise ValueError("나이는 음수가 될 수 없습니다.")
+```
+
+실행 결과:
+
+```text
+ValueError: 나이는 음수가 될 수 없습니다.
+```
+
+---
+
+## 파일 입출력
+
+파일을 읽거나 쓸 때는 `open()` 함수를 사용한다.
+
+---
+
+### 파일 쓰기
+
+```python
+file = open("example.txt", "w")
+
+file.write("Hello")
+
+file.close()
+```
+
+---
+
+### 파일 읽기
+
+```python
+file = open("example.txt", "r")
+
+print(file.read())
+
+file.close()
+```
+
+출력 결과:
+
+```text
+Hello
+```
+
+---
+
+### with 문
+
+파일을 자동으로 닫아 주기 때문에 권장되는 방법이다.
+
+```python
+with open("example.txt", "w") as file:
+    file.write("Hello")
+
+with open("example.txt", "r") as file:
+    print(file.read())
+```
+
+출력 결과:
+
+```text
+Hello
+```
+
+---
+
+### readline()
+
+한 줄씩 읽는다.
+
+```python
+with open("example.txt", "r") as file:
+    print(file.readline())
+```
+
+출력 결과:
+
+```text
+Hello
+```
+
+---
+
+### readlines()
+
+모든 줄을 리스트 형태로 읽는다.
+
+```python
+with open("example.txt", "r") as file:
+    print(file.readlines())
+```
+
+출력 결과:
+
+```text
+['Hello']
+```
+
+---
+
+### 파일 모드
+
+| 모드     | 설명           |
+| ------ | ------------ |
+| `"r"`  | 읽기           |
+| `"w"`  | 쓰기(기존 내용 삭제) |
+| `"a"`  | 이어쓰기         |
+| `"x"`  | 새 파일 생성      |
+| `"rb"` | 바이너리 읽기      |
+| `"wb"` | 바이너리 쓰기      |
+
+---
+
+### 파일 존재 여부 확인
+
+```python
+import os
+
+print(os.path.exists("example.txt"))
+```
+
+출력 결과:
+
+```text
+True
+```
+
+## 클래스와 객체
+
+클래스(class)는 객체를 만들기 위한 설계도이며, 객체(object)는 클래스로부터 생성된 인스턴스이다.
+
+```python
+class Person:
+    pass
+
+person = Person()
+
+print(type(person))
+```
+
+출력 결과:
+
+```text
+<class '__main__.Person'>
+```
+
+---
+
+### 생성자 `__init__()`
+
+객체가 생성될 때 자동으로 호출되는 메서드이다.
+
+```python
+class Person:
+    def __init__(self, name):
+        self.name = name
+
+person = Person("Python")
+
+print(person.name)
+```
+
+출력 결과:
+
+```text
+Python
+```
+
+---
+
+### 메서드
+
+클래스 내부에 정의된 함수를 메서드라고 한다.
+
+```python
+class Dog:
+    def bark(self):
+        print("멍멍")
+
+dog = Dog()
+
+dog.bark()
+```
+
+출력 결과:
+
+```text
+멍멍
+```
+
+---
+
+### 클래스 변수
+
+모든 객체가 공유하는 변수이다.
+
+```python
+class Student:
+    school = "Python High School"
+
+print(Student.school)
+```
+
+출력 결과:
+
+```text
+Python High School
+```
+
+---
+
+### 인스턴스 변수
+
+객체마다 독립적으로 가지는 변수이다.
+
+```python
+class Student:
+    def __init__(self, name):
+        self.name = name
+
+a = Student("A")
+b = Student("B")
+
+print(a.name)
+print(b.name)
+```
+
+출력 결과:
+
+```text
+A
+B
+```
+
+---
+
+## 상속
+
+기존 클래스의 기능을 물려받아 새로운 클래스를 만들 수 있다.
+
+```python
+class Animal:
+    def eat(self):
+        print("먹는다")
+
+class Dog(Animal):
+    pass
+
+dog = Dog()
+
+dog.eat()
+```
+
+출력 결과:
+
+```text
+먹는다
+```
+
+---
+
+### 메서드 오버라이딩
+
+부모 클래스의 메서드를 재정의할 수 있다.
+
+```python
+class Animal:
+    def sound(self):
+        print("소리")
+
+class Dog(Animal):
+    def sound(self):
+        print("멍멍")
+
+dog = Dog()
+
+dog.sound()
+```
+
+출력 결과:
+
+```text
+멍멍
+```
+
+---
+
+### super()
+
+부모 클래스의 메서드를 호출할 수 있다.
+
+```python
+class Animal:
+    def __init__(self):
+        print("Animal 생성")
+
+class Dog(Animal):
+    def __init__(self):
+        super().__init__()
+        print("Dog 생성")
+
+dog = Dog()
+```
+
+출력 결과:
+
+```text
+Animal 생성
+Dog 생성
+```
+
+---
+
+## 모듈
+
+모듈(module)은 함수나 클래스 등을 모아 둔 파이썬 파일이다.
+
+```python
+import math
+
+print(math.sqrt(16))
+```
+
+출력 결과:
+
+```text
+4.0
+```
+
+---
+
+### from ... import
+
+특정 요소만 가져올 수 있다.
+
+```python
+from math import pi
+
+print(pi)
+```
+
+출력 결과:
+
+```text
+3.141592653589793
+```
+
+---
+
+### 별칭(alias)
+
+`as`를 사용하여 이름을 변경할 수 있다.
+
+```python
+import math as m
+
+print(m.factorial(5))
+```
+
+출력 결과:
+
+```text
+120
+```
+
+---
+
+## 패키지
+
+패키지(package)는 여러 모듈을 묶어 놓은 폴더이다.
+
+예시 구조:
+
+```text
+my_package
+│
+├── main.py
+├── module1.py
+└── module2.py
+```
+
+사용 예시:
+
+```python
+from my_package import module1
+```
+
+---
+
+## 리스트 컴프리헨션
+
+반복문을 이용하여 리스트를 간결하게 생성할 수 있다.
+
+```python
+numbers = [x for x in range(5)]
+
+print(numbers)
+```
+
+출력 결과:
+
+```text
+[0, 1, 2, 3, 4]
+```
+
+---
+
+### 조건문 사용
+
+```python
+even_numbers = [x for x in range(10) if x % 2 == 0]
+
+print(even_numbers)
+```
+
+출력 결과:
+
+```text
+[0, 2, 4, 6, 8]
+```
+
+---
+
+## 내장 함수
+
+### len()
+
+객체의 길이를 반환한다.
+
+```python
+text = "Hello"
+
+print(len(text))
+```
+
+출력 결과:
+
+```text
+5
+```
+
+---
+
+### range()
+
+일정 범위의 숫자를 생성한다.
+
+```python
+print(list(range(5)))
+```
+
+출력 결과:
+
+```text
+[0, 1, 2, 3, 4]
+```
+
+---
+
+### sum()
+
+합계를 구한다.
+
+```python
+numbers = [1, 2, 3]
+
+print(sum(numbers))
+```
+
+출력 결과:
+
+```text
+6
+```
+
+---
+
+### max()
+
+최댓값을 반환한다.
+
+```python
+numbers = [3, 8, 1]
+
+print(max(numbers))
+```
+
+출력 결과:
+
+```text
+8
+```
+
+---
+
+### min()
+
+최솟값을 반환한다.
+
+```python
+numbers = [3, 8, 1]
+
+print(min(numbers))
+```
+
+출력 결과:
+
+```text
+1
+```
+
+---
+
+### abs()
+
+절댓값을 반환한다.
+
+```python
+print(abs(-10))
+```
+
+출력 결과:
+
+```text
+10
+```
+
+---
+
+### round()
+
+반올림한 값을 반환한다.
+
+```python
+print(round(3.14159, 2))
+```
+
+출력 결과:
+
+```text
+3.14
+```
+
+---
+
+### sorted()
+
+정렬된 새로운 객체를 반환한다.
+
+```python
+numbers = [3, 1, 4, 2]
+
+print(sorted(numbers))
+```
+
+출력 결과:
+
+```text
+[1, 2, 3, 4]
+```
+
+---
+
+### reversed()
+
+역순 반복 객체를 반환한다.
+
+```python
+numbers = [1, 2, 3]
+
+print(list(reversed(numbers)))
+```
+
+출력 결과:
+
+```text
+[3, 2, 1]
+```
+
+---
+
+### enumerate()
+
+인덱스와 값을 함께 반환한다.
+
+```python
+fruits = ["사과", "바나나", "포도"]
+
+for index, value in enumerate(fruits):
+    print(index, value)
+```
+
+출력 결과:
+
+```text
+0 사과
+1 바나나
+2 포도
+```
+
+---
+
+### zip()
+
+여러 iterable 객체를 묶어 준다.
+
+```python
+a = [1, 2, 3]
+b = ["A", "B", "C"]
+
+print(list(zip(a, b)))
+```
+
+출력 결과:
+
+```text
+[(1, 'A'), (2, 'B'), (3, 'C')]
+```
+
+---
+
+### map()
+
+모든 요소에 함수를 적용한다.
+
+```python
+numbers = [1, 2, 3]
+
+result = list(map(lambda x: x * 2, numbers))
+
+print(result)
+```
+
+출력 결과:
+
+```text
+[2, 4, 6]
+```
+
+---
+
+### filter()
+
+조건에 맞는 요소만 추출한다.
+
+```python
+numbers = [1, 2, 3, 4, 5]
+
+result = list(filter(lambda x: x % 2 == 0, numbers))
+
+print(result)
+```
+
+출력 결과:
+
+```text
+[2, 4]
+```
