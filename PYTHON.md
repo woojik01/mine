@@ -178,14 +178,14 @@ print(text[2:5])
 text = "사과, 바나나, 포도"
 print(text.split(", "))
 ```
-> ['사과', '바나나', '포도']
+> ['사과', '바나나', '포도']  
 ---
 ### replace()
 ```python
 text = "I like Java"
 print(text.replace("Java", "Python"))
 ```
-> I like Python
+> I like Python  
 ---
 ### strip()
 ```python
