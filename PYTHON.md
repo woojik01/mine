@@ -537,3 +537,534 @@ print(text.endswith("lo"))
 True
 True
 ```
+
+## 리스트
+
+리스트(list)는 여러 값을 순서대로 저장하는 자료형이다.
+
+```python
+fruits = ["사과", "바나나", "포도"]
+
+print(fruits)
+```
+
+출력 결과:
+
+```text
+['사과', '바나나', '포도']
+```
+
+---
+
+### 인덱싱
+
+```python
+fruits = ["사과", "바나나", "포도"]
+
+print(fruits[0])
+print(fruits[1])
+```
+
+출력 결과:
+
+```text
+사과
+바나나
+```
+
+---
+
+### 슬라이싱
+
+```python
+fruits = ["사과", "바나나", "포도", "딸기"]
+
+print(fruits[1:3])
+```
+
+출력 결과:
+
+```text
+['바나나', '포도']
+```
+
+⭐️ 시작 위치는 포함하고 끝 위치는 포함하지 않는다.
+
+---
+
+### append()
+
+리스트의 맨 뒤에 요소를 추가한다.
+
+```python
+fruits = ["사과", "바나나"]
+
+fruits.append("포도")
+
+print(fruits)
+```
+
+출력 결과:
+
+```text
+['사과', '바나나', '포도']
+```
+
+---
+
+### insert()
+
+원하는 위치에 요소를 삽입한다.
+
+```python
+fruits = ["사과", "포도"]
+
+fruits.insert(1, "바나나")
+
+print(fruits)
+```
+
+출력 결과:
+
+```text
+['사과', '바나나', '포도']
+```
+
+---
+
+### remove()
+
+특정 값을 삭제한다.
+
+```python
+fruits = ["사과", "바나나", "포도"]
+
+fruits.remove("바나나")
+
+print(fruits)
+```
+
+출력 결과:
+
+```text
+['사과', '포도']
+```
+
+---
+
+### pop()
+
+특정 위치의 요소를 꺼내면서 삭제한다.
+
+```python
+fruits = ["사과", "바나나", "포도"]
+
+print(fruits.pop())
+print(fruits)
+```
+
+출력 결과:
+
+```text
+포도
+['사과', '바나나']
+```
+
+---
+
+### sort()
+
+리스트를 정렬한다.
+
+```python
+numbers = [3, 1, 4, 2]
+
+numbers.sort()
+
+print(numbers)
+```
+
+출력 결과:
+
+```text
+[1, 2, 3, 4]
+```
+
+---
+
+### reverse()
+
+리스트의 순서를 뒤집는다.
+
+```python
+numbers = [1, 2, 3, 4]
+
+numbers.reverse()
+
+print(numbers)
+```
+
+출력 결과:
+
+```text
+[4, 3, 2, 1]
+```
+
+---
+
+### len()
+
+리스트의 길이를 구한다.
+
+```python
+fruits = ["사과", "바나나", "포도"]
+
+print(len(fruits))
+```
+
+출력 결과:
+
+```text
+3
+```
+
+---
+
+## 튜플
+
+튜플(tuple)은 여러 값을 저장할 수 있지만, 값을 수정할 수 없는 자료형이다.
+
+```python
+numbers = (1, 2, 3)
+
+print(numbers)
+```
+
+출력 결과:
+
+```text
+(1, 2, 3)
+```
+
+---
+
+### 인덱싱
+
+```python
+numbers = (10, 20, 30)
+
+print(numbers[0])
+```
+
+출력 결과:
+
+```text
+10
+```
+
+---
+
+### 슬라이싱
+
+```python
+numbers = (10, 20, 30, 40)
+
+print(numbers[1:3])
+```
+
+출력 결과:
+
+```text
+(20, 30)
+```
+
+---
+
+### count()
+
+특정 값의 개수를 구한다.
+
+```python
+numbers = (1, 2, 2, 3)
+
+print(numbers.count(2))
+```
+
+출력 결과:
+
+```text
+2
+```
+
+---
+
+### index()
+
+특정 값의 위치를 구한다.
+
+```python
+numbers = (10, 20, 30)
+
+print(numbers.index(20))
+```
+
+출력 결과:
+
+```text
+1
+```
+
+---
+
+## 딕셔너리
+
+딕셔너리(dictionary)는 `키(key): 값(value)` 형태로 데이터를 저장하는 자료형이다.
+
+```python
+person = {
+    "name": "Alice",
+    "age": 20
+}
+
+print(person)
+```
+
+출력 결과:
+
+```text
+{'name': 'Alice', 'age': 20}
+```
+
+---
+
+### 값 접근
+
+```python
+person = {
+    "name": "Alice",
+    "age": 20
+}
+
+print(person["name"])
+```
+
+출력 결과:
+
+```text
+Alice
+```
+
+---
+
+### 값 추가 및 수정
+
+```python
+person = {
+    "name": "Alice"
+}
+
+person["age"] = 20
+
+print(person)
+```
+
+출력 결과:
+
+```text
+{'name': 'Alice', 'age': 20}
+```
+
+---
+
+### del
+
+키와 값을 삭제한다.
+
+```python
+person = {
+    "name": "Alice",
+    "age": 20
+}
+
+del person["age"]
+
+print(person)
+```
+
+출력 결과:
+
+```text
+{'name': 'Alice'}
+```
+
+---
+
+### keys()
+
+모든 키를 반환한다.
+
+```python
+person = {
+    "name": "Alice",
+    "age": 20
+}
+
+print(person.keys())
+```
+
+출력 결과:
+
+```text
+dict_keys(['name', 'age'])
+```
+
+---
+
+### values()
+
+모든 값을 반환한다.
+
+```python
+person = {
+    "name": "Alice",
+    "age": 20
+}
+
+print(person.values())
+```
+
+출력 결과:
+
+```text
+dict_values(['Alice', 20])
+```
+
+---
+
+### items()
+
+모든 키와 값을 튜플 형태로 반환한다.
+
+```python
+person = {
+    "name": "Alice",
+    "age": 20
+}
+
+print(person.items())
+```
+
+출력 결과:
+
+```text
+dict_items([('name', 'Alice'), ('age', 20)])
+```
+
+---
+
+## 집합(set)
+
+집합(set)은 중복을 허용하지 않는 자료형이다.
+
+```python
+numbers = {1, 2, 3, 3, 2}
+
+print(numbers)
+```
+
+출력 결과:
+
+```text
+{1, 2, 3}
+```
+
+---
+
+### add()
+
+요소를 추가한다.
+
+```python
+numbers = {1, 2, 3}
+
+numbers.add(4)
+
+print(numbers)
+```
+
+출력 결과:
+
+```text
+{1, 2, 3, 4}
+```
+
+---
+
+### remove()
+
+요소를 삭제한다.
+
+```python
+numbers = {1, 2, 3}
+
+numbers.remove(2)
+
+print(numbers)
+```
+
+출력 결과:
+
+```text
+{1, 3}
+```
+
+---
+
+### 합집합
+
+```python
+a = {1, 2, 3}
+b = {3, 4, 5}
+
+print(a | b)
+```
+
+출력 결과:
+
+```text
+{1, 2, 3, 4, 5}
+```
+
+---
+
+### 교집합
+
+```python
+a = {1, 2, 3}
+b = {3, 4, 5}
+
+print(a & b)
+```
+
+출력 결과:
+
+```text
+{3}
+```
+
+---
+
+### 차집합
+
+```python
+a = {1, 2, 3}
+b = {3, 4, 5}
+
+print(a - b)
+```
+
+출력 결과:
+
+```text
+{1, 2}
+```
